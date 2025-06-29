@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iman Balqis Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&family=Baguet+Script&family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fffaf6;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background-color: #fffaf6;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .book-btn {
+      border: 1px solid #222;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #222;
+      transition: 0.3s;
+    }
+
+    .book-btn:hover {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .experience-text h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #1d2b1f;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .item {
+      width: 70%;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .image-wrapper {
+      border: 10px solid #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      position: relative;
+      aspect-ratio: 4/3;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .image-wrapper img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 600;
+      background-color: #fff;
+      padding: 0.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience {
+      background-color: #f5eee6;
+    }
+
+    footer {
+      background-color: #e0d8cf;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      color: #333;
+      font-family: 'Raleway', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">ALL THINGS ABOUT ME</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Work Experience.html">Work Experience</a>
+      <a href="Education.html">Education</a>
+    </nav>
+    <a class="book-btn" href="mailto:imanbalqis5@gmail.com">EMAIL ME</a>
+  </header>
+
+  <section class="section experience" id="education">
+    <div class="experience-text">
+      <h2>Education</h2>
+      <div class="gallery">
+        <div class="item">
+          <div class="image-wrapper">
+            <img src="ES 1.jpg" class="active" alt="Elementary">
+            <img src="ES 2.jpg" alt="Elementary">
+            <img src="ES 3.jpg" alt="Elementary">
+          </div>
+          <div class="caption">Elementary School (2009 - 2015)</div>
+        </div>
+        <div class="item">
+          <div class="image-wrapper">
+            <img src="HG 1.jpg" class="active" alt="High School">
+            <img src="HG 2.jpg" alt="High School">
+            <img src="HG 3.jpg" alt="High School">
+          </div>
+          <div class="caption">High School (2016 - 2021)</div>
+        </div>
+        <div class="item">
+          <div class="image-wrapper">
+            <img src="DP 1.jpg" class="active" alt="Diploma">
+            <img src="DP 2.jpg" alt="Diploma">
+            <img src="DP 3.jpg" alt="Diploma">
+          </div>
+          <div class="caption">Diploma (2023 - 2025)</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 3rem;">Achievements During Diploma</h2>
+      <div class="gallery">
+        <div class="item">
+          <div class="image-wrapper">
+            <img src="AC 1.jpg" class="active" alt="Achievement">
+            <img src="AC 2.jpg" alt="Achievement">
+            <img src="AC 3.jpg" alt="Achievement">
+            <img src="AC 4.jpg" alt="Achievement">
+          </div>
+          <div class="caption">My Achievements</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Created with ♥ by Iman Balqis | Last updated: 2025</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".item");
+      items.forEach(item => {
+        const imgs = item.querySelectorAll("img");
+        let index = 0;
+        imgs[0].classList.add("active");
+        setInterval(() => {
+          imgs[index].classList.remove("active");
+          index = (index + 1) % imgs.length;
+          imgs[index].classList.add("active");
+        }, 3000);
+      });
+    });
+  </script>
+</body>
+</html>

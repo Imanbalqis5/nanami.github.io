@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iman Balqis Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&family=Baguet+Script&family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fffaf6;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background-color: #fffaf6;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .book-btn {
+      border: 1px solid #222;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #222;
+      transition: 0.3s;
+    }
+
+    .book-btn:hover {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .skills {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .skills-text h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #1d2b1f;
+    }
+
+    .skills-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .skill-item {
+      width: 70%;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .image-wrapper {
+      border: 10px solid #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      position: relative;
+      height: auto;
+      aspect-ratio: 4/3;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .image-wrapper img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .skill-caption {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 600;
+      background-color: #fff;
+      padding: 0.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #e0d8cf;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      color: #333;
+      font-family: 'Raleway', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">ALL THINGS ABOUT ME</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Work Experience.html">Work Experience</a>
+      <a href="Education.html">Education</a>
+    </nav>
+    <a class="book-btn" href="mailto:imanbalqis5@gmail.com">EMAIL ME</a>
+  </header>
+
+  <section class="skills" id="skills">
+    <div class="skills-text">
+      <h2>My Skills</h2>
+      <div class="skills-gallery">
+        <div class="skill-item">
+          <div class="image-wrapper">
+            <img src="micro 1.jpg" class="active" alt="Microsoft Office">
+            <img src="micro 2.jpg" alt="Microsoft Office">
+          </div>
+          <div class="skill-caption">Proficient in Microsoft Office</div>
+        </div>
+        <div class="skill-item">
+          <div class="image-wrapper">
+            <img src="s 22.jpg" class="active" alt="Multitasking">
+            <img src="multi 2.jpg" alt="Multitasking">
+          </div>
+          <div class="skill-caption">Multitasking</div>
+        </div>
+        <div class="skill-item">
+          <div class="image-wrapper">
+            <img src="com 1.jpg" class="active" alt="Communication">
+            <img src="com 2.jpg" alt="Communication">
+          </div>
+          <div class="skill-caption">Good in Communication</div>
+        </div>
+        <div class="skill-item">
+          <div class="image-wrapper">
+            <img src="tw 1.jpg" class="active" alt="Teamwork">
+            <img src="tw 2.jpg" alt="Teamwork">
+          </div>
+          <div class="skill-caption">Teamwork</div>
+        </div>
+        <div class="skill-item">
+          <div class="image-wrapper">
+            <img src="fl 1.jpg" class="active" alt="Fast Learner">
+            <img src="fl 2.jpg" alt="Fast Learner">
+          </div>
+          <div class="skill-caption">Fast Learner</div>
+        </div>
+        <div class="skill-item">
+          <div class="image-wrapper">
+            <img src="gm 1.jpg" class="active" alt="Time Management">
+            <img src="gm 2.jpg" alt="Time Management">
+          </div>
+          <div class="skill-caption">Good in Time Management</div>
+        </div>
+      </div>
+    </div>
+  </section>
+<footer>
+    <p>Created with ♥ by Iman Balqis | Last updated: 2025</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".skill-item");
+
+      items.forEach(item => {
+        const imgs = item.querySelectorAll("img");
+        let index = 0;
+
+        imgs[0].classList.add("active");
+
+        setInterval(() => {
+          imgs[index].classList.remove("active");
+          index = (index + 1) % imgs.length;
+          imgs[index].classList.add("active");
+        }, 3000);
+      });
+    });
+    
+  </script>
+</body>
+</html>

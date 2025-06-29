@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FAF0E6;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background-color: #fffaf6;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .book-btn {
+      border: 1px solid #222;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #222;
+      transition: 0.3s;
+    }
+
+    .book-btn:hover {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 3rem 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      max-width: 50%;
+      animation: fadeSlideIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: #1d2b1f;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #1d2b1f;
+    }
+
+    .hero-image {
+      max-width: 45%;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-image img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-image img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    footer {
+      background-color: #e0d8cf;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      color: #333;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-text,
+      .hero-image {
+        max-width: 100%;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">IMD 318</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Work Experience.html">Work Experience</a>
+      <a href="Education.html">Education</a>
+    </nav>
+    <a class="book-btn" href="mailto:imanbalqis5@gmail.com">EMAIL ME</a>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>IMAN BALQIS<br>AZLIN</h1>
+      <p>UITM student with a dream</p>
+    </div>
+    <div class="hero-image">
+      <img src="Profile home.jpg" class="active" alt="Image 1">
+      <img src="Profile 2.jpg" alt="Image 2">
+      <img src="Profile 3.jpg" alt="Image 3">
+    </div>
+  </section>
+
+  <footer>
+    <p>Created with ♥ by Iman Balqis | Last updated: 2025</p>
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.hero-image img');
+    let current = 0;
+
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000); // Change every 3 seconds
+  </script>
+
+</body>
+</html>
